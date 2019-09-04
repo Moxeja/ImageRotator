@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "Image Rotator",
+	"version": "1.0",
+	"author": "Moxeja",
+	
+	"description": "Allows you to rotate images through a context menu entry.",
+	"icons": {
+		"16": "icon-tiny.png",
+		"48": "icon-small.png",
+		"128": "icon-large.png"
+	},
+	
+	"content_scripts": [{
+		"js": ["content-script.js"],
+		"matches": ["<all_urls>"],
+		"run_at": "document_end",
+		"all_frames": true
+	}],
+	"background": {
+		"scripts": ["event-page.js"],
+		"persistent": false
+	},
+	"permissions": [
+		"contextMenus",
+		"activeTab"
+	]
+}
